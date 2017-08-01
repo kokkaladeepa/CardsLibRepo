@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="8dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="8dp"
+    tools:context="com.example.dreamworld.cardslibpoc.CategoryWiseMaterialCardActivity">
+
+    <it.gmariotti.cardslib.library.recyclerview.view.CardRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        card:list_card_layout_resourceID="@layout/recyclerview_material_card_layout"
+        android:id="@+id/card_recyclerview"/>
+
+</RelativeLayout>
