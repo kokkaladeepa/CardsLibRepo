@@ -2,11 +2,13 @@ package com.example.dreamworld.cardslibpoc;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.ActionMode;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -29,6 +31,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //floating button action to add product
+        FloatingActionButton addbutton = (FloatingActionButton) findViewById(R.id.addproduct_id);
+        addbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Click action
+                Toast.makeText(getApplicationContext(), " Add your product ", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, AddProductToRent.class);
+                startActivity(intent);
+            }
+        });
 
         //Adding card to the view
 
@@ -62,15 +76,29 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Card> initCard() {
 
         ArrayList<Card> cards = new ArrayList<Card>();
+    ArrayList<String> categories=new ArrayList<String>();
+        categories.add(0,"Cameras");
+        categories.add(1,"Watches");
+        categories.add(2,"Gear Cycles");
+        categories.add(3,"VR Devices");
+        categories.add(4,"Mobiles");
+
+        ArrayList<Integer> categories_images=new ArrayList<>();
+        categories_images.add(0,R.drawable.cameras);
+        categories_images.add(1,R.drawable.watches);
+        categories_images.add(2,R.drawable.cycles);
+        categories_images.add(3,R.drawable.vrdevices);
+        categories_images.add(4,R.drawable.mobiles);
+
 
         for (int i = 0; i < 5; i++) {
 
 
             MaterialLargeImageCard card = new MaterialLargeImageCard(this.getApplicationContext());
             card.setInnerLayout(R.layout.native_material_largeimage_card);
-            card.setDrawableIdCardThumbnail(R.drawable.electronics);
+            card.setDrawableIdCardThumbnail(categories_images.get(i));
             //Set the title and subtitle in the card
-            card.setTextOverImage("Electronics");
+           card.setTextOverImage(categories.get(i));
             card.build();
 
             card.setOnClickListener(new Card.OnCardClickListener() {

@@ -26,7 +26,7 @@ public class ExpandableActivity extends AppCompatActivity {
         header.setTitle("expand it");
 
 
-//to add other icon for expand acrtion
+    //to add other icon for expand acrtion
 header.setButtonExpandVisible(true);
    /*     header.setOtherButtonVisible(true);
 

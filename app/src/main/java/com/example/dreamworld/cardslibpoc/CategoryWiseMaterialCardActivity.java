@@ -20,7 +20,8 @@ import it.gmariotti.cardslib.library.recyclerview.view.CardRecyclerView;
 
 public class CategoryWiseMaterialCardActivity extends AppCompatActivity {
 
-    final int TOTAL_CARDS = 3;
+    final int TOTAL_CARDS = 5;
+
     //private CardArrayAdapter
     private CardArrayRecyclerViewAdapter mCardArrayAdapter;
     private CardRecyclerView mRecyclerView;
@@ -52,50 +53,21 @@ public class CategoryWiseMaterialCardActivity extends AppCompatActivity {
     private ArrayList<Card> initCard() {
 
         ArrayList<Card> cards = new ArrayList<Card>();
+        ArrayList<String> title=new ArrayList<String>();
+
 
         for (int i = 0; i < TOTAL_CARDS; i++) {
 
 
             MaterialLargeImageCard card = new MaterialLargeImageCard(this.getApplicationContext());
-
-            //card.setInnerLayout(R.layout.native_material_largeimage_text_card);
             card.setDrawableIdCardThumbnail(R.drawable.mainimage);
-            card.setTextOverImage("Italian Beaches");
-            //  card.setDrawableIdCardThumbnail(R.drawable.card_background_01);
+           //Title to be displayed on the product image
+            card.setTextOverImage("DSLR");
+           //Model numbber and specifications of the product
+            card.setTitle("Canon EOS 1300D DSLR Camera (Black)");
+            IconSupplementalAction t1 = new IconSupplementalAction(this, R.id.like_id);
 
-            //Set the title and subtitle in the card
-            card.setTitle("Nikon Camera");
-            card.setSubTitle("Price per day: $200");
-
-
-
-            IconSupplementalAction t1 = new IconSupplementalAction(this, R.id.ic1);
             t1.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
-                @Override
-                public void onClick(Card card, View view) {
-                    Toast.makeText(getApplicationContext(), " Did you like this product ", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-/*
-
-            IconSupplementalAction t2 = new IconSupplementalAction(this, R.id.ic2);
-
-
-            t2.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
-                @Override
-                public void onClick(Card card, View view) {
-                    Toast.makeText(getApplicationContext(), "Browse for similar product ", Toast.LENGTH_SHORT).show();
-                }
-            });
-*/
-
-
-
-
-            IconSupplementalAction t3 = new IconSupplementalAction(this, R.id.ic3);
-
-            t3.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
                 @Override
                 public void onClick(Card card, View view) {
                     Toast.makeText(getApplicationContext(), " Like it", Toast.LENGTH_SHORT).show();
@@ -103,9 +75,9 @@ public class CategoryWiseMaterialCardActivity extends AppCompatActivity {
             });
 
 
-            IconSupplementalAction t4 = new IconSupplementalAction(this, R.id.ic4);
+            IconSupplementalAction t2 = new IconSupplementalAction(this, R.id.share_id);
 
-            t4.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
+            t2.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
                 @Override
                 public void onClick(Card card, View view) {
                     Toast.makeText(getApplicationContext(), " Share with others ", Toast.LENGTH_SHORT).show();
@@ -113,26 +85,23 @@ public class CategoryWiseMaterialCardActivity extends AppCompatActivity {
                 }
             });
 
-            TextSupplementalAction t5=new TextSupplementalAction(this,R.id.ic5);
-            t5.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
+            TextSupplementalAction t3=new TextSupplementalAction(this,R.id.expand_id);
+            t3.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
                 @Override
                 public void onClick(Card card, View view) {
-                    Toast.makeText(getApplicationContext(), " Expand activity sahould be called ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), " Expand activity should be called ", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(CategoryWiseMaterialCardActivity.this, ExpandableActivity.class);
                     startActivity(intent);
 
                 }
             });
-
+            //Add the supplemental icons to the card
             card.addSupplementalAction(t1);
-          //  card.addSupplementalAction(t2);
+            card.addSupplementalAction(t2);
             card.addSupplementalAction(t3);
-            card.addSupplementalAction(t4);
-            card.addSupplementalAction(t5);
 
             //Set the layout for supplemental actions
             card.setLayout_supplemental_actions_id(R.layout.material_supplemental_actions_layout);
-
             //Very important call: build the card
             card.build();
             cards.add(card);

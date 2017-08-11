@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="Availability"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewCalender"
+                android:layout_width="147dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.31"
+                android:text="Tada!! My Product will be Available From dd/mm/yyyy to dd/mm/yyyy."
+                android:textAlignment="center" />
+
+            <ImageButton
+                android:id="@+id/imageButtonCalender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.10"
+                app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical"
+        android:layout_weight="0.39">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="casual"
+            android:text="Pricing Details"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:id="@+id/materialTextField"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.571"
+            app:mtf_cardCollapsedHeight="4dp"
+            app:mtf_hasFocus="false"
+            app:mtf_image="@android:drawable/ic_menu_edit"
+            app:mtf_labelColor="@android:color/holo_blue_dark"
+            app:mtf_openKeyboardOnFocus="true">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Per Day"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textColor="@android:color/holo_red_light"
+                android:textColorHint="@android:color/holo_red_light"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="casual"
+            android:text="Long Term Pricing Details"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:id="@+id/materialTextField3"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.571"
+            app:mtf_cardCollapsedHeight="4dp"
+            app:mtf_hasFocus="false"
+            app:mtf_image="@android:drawable/ic_menu_edit"
+            app:mtf_labelColor="@android:color/holo_blue_dark"
+            app:mtf_openKeyboardOnFocus="true">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Per Week"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textColor="@android:color/holo_red_light"
+                android:textColorHint="@android:color/holo_red_light"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:id="@+id/materialTextField4"
+            android:layout_width="162dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+
+
+            android:layout_weight="0.21"
+
+            app:mtf_cardCollapsedHeight="4dp"
+            app:mtf_hasFocus="false"
+            app:mtf_image="@android:drawable/ic_menu_edit"
+            app:mtf_labelColor="@android:color/holo_blue_dark"
+            app:mtf_openKeyboardOnFocus="true">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Per Month"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textColor="@android:color/holo_red_light"
+                android:textColorHint="@android:color/holo_red_light"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </com.github.florent37.materialtextfield.MaterialTextField>
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical"
+        android:layout_weight="0.53"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="casual"
+            android:text="Security Deposit"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:id="@+id/materialTextField6"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+
+            android:layout_weight="0.29"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.571"
+            app:mtf_cardCollapsedHeight="4dp"
+            app:mtf_hasFocus="false"
+            app:mtf_image="@android:drawable/ic_secure"
+            app:mtf_labelColor="@android:color/holo_blue_dark"
+            app:mtf_openKeyboardOnFocus="true">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Security Deposit"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textColor="@android:color/holo_red_light"
+                android:textColorHint="@android:color/holo_red_light"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.12"
+            android:background="@color/mdtp_button_color"
+            android:layout_marginTop="8dp"
+            android:text="Confirm" />
+    </LinearLayout>
+    </LinearLayout>
